@@ -94,11 +94,21 @@ const Header = (props ) => {
     min-width: 80px;
     position: relative;
     text-decoration: none;
-
     span {
       color: rgba(0, 0, 0, 0.6);
       display: flex;
       align-items: center;
+    }
+    @media (max-width: 768px) {
+      min-width: 70px;
+      
+    }
+   }
+   &:hover , &:active {
+    a{
+      span {
+        color: rgba(0, 0, 0, 0.9);
+      }
     }
    }
   `
@@ -121,6 +131,30 @@ const Header = (props ) => {
         </Search>
         <Nav>
           <NavListWrap>
+            <NavList>
+              <a >
+                <img src="/images/nav-home.svg" alt="" />
+                <span>Home</span>
+              </a>
+            </NavList>
+            <NavList>
+              <a >
+                <img src="/images/nav-home.svg" alt="" />
+                <span>Home</span>
+              </a>
+            </NavList>
+            <NavList>
+              <a >
+                <img src="/images/nav-home.svg" alt="" />
+                <span>Home</span>
+              </a>
+            </NavList>
+            <NavList>
+              <a >
+                <img src="/images/nav-home.svg" alt="" />
+                <span>Home</span>
+              </a>
+            </NavList>
             <NavList>
               <a >
                 <img src="/images/nav-home.svg" alt="" />
