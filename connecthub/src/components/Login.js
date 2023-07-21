@@ -1,8 +1,36 @@
 import styled from 'styled-components';
 
-const Login = (props) => {
-  
-    const Cointainer = styled.div`
+const Login = (props) => {  
+
+  return (
+    <Cointainer>
+        <Nav>
+            <a href="/">
+                <img src="/images/login-logo.svg" alt="" />
+            </a>
+            <div>
+              <Join>Join now</Join>
+              <SignIn>Sign in</SignIn> 
+            </div>
+        </Nav>
+        <Section>
+          <Hero>
+            <h1>Welcome to your professional community</h1>
+            <img src="/images/login-hero.svg" alt="" />
+          </Hero>
+          <Form>
+            <Google>
+              <img src="/images/google.svg" alt="" />
+              Sign with Google
+            </Google>
+          </Form>
+        </Section>
+
+    </Cointainer>
+  )
+}
+
+const Cointainer = styled.div`
     padding: 0;    
     `
     const Nav = styled.div`
@@ -135,34 +163,5 @@ const Login = (props) => {
        
     }
     `
-    
-
-  return (
-    <Cointainer>
-        <Nav>
-            <a href="/">
-                <img src="/images/login-logo.svg" alt="" />
-            </a>
-            <div>
-              <Join>Join now</Join>
-              <SignIn>Sign in</SignIn> 
-            </div>
-        </Nav>
-        <Section>
-          <Hero>
-            <h1>Welcome to your professional community</h1>
-            <img src="/images/login-hero.svg" alt="" />
-          </Hero>
-          <Form>
-            <Google>
-              <img src="/images/google.svg" alt="" />
-              Sign with Google
-            </Google>
-          </Form>
-        </Section>
-
-    </Cointainer>
-  )
-}
 
 export default Login
