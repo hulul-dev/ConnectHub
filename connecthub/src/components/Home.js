@@ -1,4 +1,7 @@
 import styled from 'styled-components'
+import Leftside from './Leftside'
+import Main from './Main'
+import Rigthside from './Rightside'
 
 const Home = (props) => {
   return (
@@ -8,12 +11,12 @@ const Home = (props) => {
         <p>&nbsp; Quickly find talented pros using Upwork, ensuring your business stays on track.</p>
       </Section>
       <Layout>
-        <div className="left">left</div>
-        <div className="center">center</div>
-        <div className="right">rigth</div>
+          <Leftside/>
+          <Main/>
+          <Rigthside/>
       </Layout>
     </Container>
-  )
+  ) 
 }
 
 const Container = styled.div`
