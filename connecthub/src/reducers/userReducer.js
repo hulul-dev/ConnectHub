@@ -3,8 +3,10 @@ const initialState = {
 }
 
 const useReducer = (state = initialState, action) => {
-    switch (action.key) {
+    switch (action.type) {
         default:
             return state;
     }
 }
+
+export default useReducer

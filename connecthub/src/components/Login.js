@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-
+import {connect} from 'react-redux'
 const Login = (props) => {  
 
   return (
@@ -163,5 +163,11 @@ const Cointainer = styled.div`
        
     }
     `
+const mapStateToProps = (state) => {
+  return {}
+}
 
-export default Login
+const mapDispatchToprops = (dispatch) => ({})
+
+export default connect(mapDispatchToprops, mapDispatchToprops)(Login)
+

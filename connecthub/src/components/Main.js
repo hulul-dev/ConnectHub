@@ -14,15 +14,15 @@ const Main = (props) => {
                         <span>Photo</span>
                     </button>
                     <button>
-                        <img src="/images/photo-icon.svg" alt="" />
+                        <img src="/images/youtube.svg" alt="" />
                         <span>Video</span>
                     </button>
                     <button>
-                        <img src="/images/photo-icon.svg" alt="" />
+                        <img src="/images/event.svg" alt="" />
                         <span>Event</span>
                     </button>
                     <button>
-                        <img src="/images/photo-icon.svg" alt="" />
+                        <img src="/images/article.svg" alt="" />
                         <span>Artical</span>
                     </button>
                 </div>
