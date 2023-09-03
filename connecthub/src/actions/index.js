@@ -1,19 +1,24 @@
-// import {auth, provider} from '../firebase';
+import {auth, provider,signInWithGooglePopup} from '../firebase';
+import { SET_USER } from './actionType';
 
-const auth = require('../firebase');
-const provider = require('../firebase')
+    export const setUser = (payload) => ({
+        type: SET_USER,
+        user: payload
+    });
 
-const SignInAPI = () => {
-    return (dispatch) => {
-        auth.signInWithPopup(provider)
-        .then((payload) => {
-            console.log(payload)
-        })
-        .catch((error) => {
-            alert(error.message)
-        })
-    }
-}
+    const SignInAPI = () => {
+        return async (dispatch) => {
+          try {
+            const payload = await signInWithGooglePopup();
+            console.log(payload);
+            dispatch(setUser(payload))
+            // Dispatch actions or handle user data as needed
+          } catch (error) {
+            console.error(`Sign-in error: ${error.message}`);
+            // Handle errors (e.g., show error message to the user)
+          }
+        };
+    };
 
 export default SignInAPI
 

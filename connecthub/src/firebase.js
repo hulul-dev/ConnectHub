@@ -1,6 +1,6 @@
 import { initializeApp } from 'firebase/app';
 import { getFirestore } from 'firebase/firestore';
-import { getAuth, GoogleAuthProvider } from 'firebase/auth';
+import { getAuth, signInWithPopup, GoogleAuthProvider} from 'firebase/auth';
 import { getStorage } from 'firebase/storage';
 
 
@@ -19,5 +19,19 @@ const firebaseConfig = {
   const auth = getAuth(firebaseApp);
   const provider = new GoogleAuthProvider();
   const storage = getStorage(firebaseApp);
+
+  const signInWithGooglePopup = async () => {
+    try {
+      const result = await signInWithPopup(auth, provider);
+      // Handle successful sign-in
+      const user = result.user;
+      console.log(`User signed in: ${user.displayName}`);
+      return user.displayName; // Return user data
+    } catch (error) {
+      // Handle errors
+      console.error(`Sign-in error: ${error.message}`);
+      throw error; // Throw the error for handling in the calling function
+    }
+  };
   
-  export { auth, provider, storage, db };// Export all Firebase services
+  export { auth, provider, storage, db, signInWithGooglePopup };// Export all Firebase services

@@ -1,11 +1,21 @@
 import styled from 'styled-components';
 import {connect} from 'react-redux'
 import signInAPI from '../actions/index'
+import { useEffect } from 'react';
+import Home from './Home';
+import Header from './Header';
+import { Redirect } from 'react-router-dom/cjs/react-router-dom.min';
 
-const Login = (props) => {  
+const Login = (props) => { 
+const origin = window.location.origin
+
+  useEffect(() => {
+    console.log(props.user)
+  },[props.user])
 
   return (
     <Cointainer>
+   {props.user && <Redirect to="/home" />}
         <Nav>
             <a href="/">
                 <img src="/images/login-logo.svg" alt="" />
@@ -21,7 +31,7 @@ const Login = (props) => {
             <img src="/images/login-hero.svg" alt="" />
           </Hero>
           <Form>
-            <Google onClick={() => props.sigIn()}>
+            <Google onClick={() => props.signIn()}>
               <img src="/images/google.svg" alt="" />
               Sign with Google
             </Google>
@@ -166,12 +176,15 @@ const Cointainer = styled.div`
     }
     `
 const mapStateToProps = (state) => {
-  return {}
+  console.log('state',state)
+  return {
+    user: state.userState.user,
+  }
 }
 
 const mapDispatchToprops = (dispatch) => ({
   signIn: () => dispatch(signInAPI())  
 });
 
-export default connect(mapDispatchToprops, mapDispatchToprops)(Login)
+export default connect(mapStateToProps, mapDispatchToprops)(Login)
 

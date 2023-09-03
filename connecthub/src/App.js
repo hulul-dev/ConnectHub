@@ -16,7 +16,7 @@ const App = () => {
           <Route path= "/home">
             <Header />
             <Home />
-          </Route>            
+          </Route>
         </Switch>
       </Router>
     </div>
