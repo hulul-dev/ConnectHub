@@ -1,4 +1,7 @@
-import {auth, provider} from '../firebase';
+// import {auth, provider} from '../firebase';
+
+const auth = require('../firebase');
+const provider = require('../firebase')
 
 const SignInAPI = () => {
     return (dispatch) => {

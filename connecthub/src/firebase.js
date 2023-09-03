@@ -1,7 +1,7 @@
-const firebase = require('./firebase');
-require('firebase/auth');
-require('firebase/firestore');
-require('firebase/storage');
+import { initializeApp } from 'firebase/app';
+import { getFirestore } from 'firebase/firestore';
+import { getAuth, GoogleAuthProvider } from 'firebase/auth';
+import { getStorage } from 'firebase/storage';
 
 
 const firebaseConfig = {
@@ -14,22 +14,10 @@ const firebaseConfig = {
   };
 
 
-  const firebaseapp = firebase.initializeApp(firebaseConfig);
-  const db = firebaseapp.firestore();
-  const auth = firebase.auth();
-  const provider = new firebase.auth.GoogleAuthProvider();
-  const storage = firebase.storage();
-
-
-//   const firebaseapp = firebase.initializeApp(firebaseConfig);
-
-// // Initialize Firestore, Auth, and Storage
-// const db = firebaseapp.firestore();
-// const auth = firebaseapp.auth();
-// const provider = new firebase.auth.GoogleAuthProvider();
-// const storage = firebaseapp.storage();
+  const firebaseApp = initializeApp(firebaseConfig);
+  const db = getFirestore(firebaseApp);
+  const auth = getAuth(firebaseApp);
+  const provider = new GoogleAuthProvider();
+  const storage = getStorage(firebaseApp);
   
-  // export {auth, provider};
-  module.exports = { auth, provider, storage };
-  export default db;
-
+  export { auth, provider, storage, db };// Export all Firebase services
